@@ -14,8 +14,8 @@ conexion.init_app(app)
 
 Migrate(app, conexion)
 
-api.add_resource(AreaController, "/Areas")
-api.add_resource(EmpleadoController, "/Empleados")
+api.add_resource(AreaController, "/area")
+api.add_resource(EmpleadoController, "/empleado")
 
 if __name__=="__main__":
     app.run(debug = True)
