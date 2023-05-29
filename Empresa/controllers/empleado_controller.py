@@ -5,8 +5,7 @@ from dtos.empleado_dto import EmpleadoResponseDto,EmpleadoRequestDto
 
 class EmpleadoController(Resource):
     def get(self):
-        resultado = conexion.session.query
-        (EmpleadoModel).all()
+        resultado = conexion.session.query(EmpleadoModel).all()
         dto=EmpleadoResponseDto(many = True)
         data= dto.dump(resultado)
 
@@ -19,6 +18,7 @@ def post(self):
     dataValidada = dto.load(data)
     print(dataValidada)
     nuevoEmpleado = EmpleadoModel(**dataValidada)
+    conexion.session.add(nuevoEmpleado)
     try:
         conexion.session.commit()
         return {

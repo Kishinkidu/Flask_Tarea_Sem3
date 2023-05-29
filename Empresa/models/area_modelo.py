@@ -1,4 +1,5 @@
-from sqlalchemy import Column , types
+from sqlalchemy.schema import Column 
+from sqlalchemy import types
 from Base_de_datos import conexion
 
 class AreaModel(conexion.Model):
@@ -8,4 +9,4 @@ class AreaModel(conexion.Model):
 
 
 
-    __tablename__="area"
+    __tablename__="areas"

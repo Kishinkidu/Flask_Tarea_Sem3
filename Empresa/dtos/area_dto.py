@@ -5,3 +5,7 @@ class AreaRequestDto(SQLAlchemyAutoSchema):
     class Meta:
         model = AreaModel
         include_fk=True
+
+class AreaResponseDto(SQLAlchemyAutoSchema):
+    class Meta:
+        model = AreaModel
